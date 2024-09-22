@@ -70,3 +70,38 @@
 .center-text{
     text-align: center;
 }
+
+.project-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+  
+  .project-image {
+    flex: 1;
+    max-width: 150px;
+    margin-right: 20px;
+  }
+  
+  .project-info {
+    flex: 3;
+    padding-left: 20px;
+  }
+  
+  .project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-info p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .v-scrol {
+    overflow-y: auto;
+    padding-right: 15px;
+  }
+  

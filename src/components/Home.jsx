@@ -5,8 +5,8 @@ import DividerImage from '../assets/divider-7568849_1280.webp';
 
 function Home() {
 
-  const [title,setTitle] = useState('');
-  const [description,setdescription] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setdescription] = useState('');
   const [projects, setProjects] = useState([]);
 
 
@@ -22,10 +22,10 @@ function Home() {
         });
 
         const data = await response.json();
-        
+
         // Set the fetched projects to state
         setProjects(data.projects);
-        
+
       } catch (error) {
         console.error('Error fetching projects:', error);
       }
@@ -34,7 +34,7 @@ function Home() {
     // Call the function
     fetchProjects();
     console.log(projects);
-  }, []); 
+  }, []);
 
   return (
     <div className="container-fluid h-100">
@@ -45,7 +45,7 @@ function Home() {
           <div className="center-text">
             <h2>Prathmesh Chandrakant Rasal</h2>
             <h7> <a href="https://www.google.com/maps?q=Kolhapur,+Maharashtra" target="_blank">Kolhapur</a> | <a href="">+917219713604</a> | <a href="https://mail.google.com/mail/?view=cm&fs=1&to=prathmeshrasal2003@gmail.com" target="_blank">
-            prathmeshrasal2003@gmail.com</a> | <a href="www.linkedin.com/in/prathmesh-rasal-152851241">Linkedin</a></h7>
+              prathmeshrasal2003@gmail.com</a> | <a href="www.linkedin.com/in/prathmesh-rasal-152851241">Linkedin</a></h7>
           </div>
         </div>
 
@@ -75,39 +75,31 @@ function Home() {
       </div>
       <div className="divider"></div>
       <div className="row" style={{ width: '1347px' }}>
-
         <div className='v-scrol' style={{ height: '400px' }}>
           <div className="row heading" style={{ width: '1347px', height: '50px' }}>
             PROJECTS
           </div>
-            {projects.map((project)=>(
-          <div className="row mb-4" style={{ width: '1347px', height: '110px' }}>
-              <b>{project.title}</b>
-              <p>(08/2022 - 11/2022)</p>
-              <p>{project.description}</p>
-          </div>
-            ))}
-            
-          {/* <div className="row mb-4" style={{ width: '1347px', height: '130px' }}>
-            <b>Library Management System Using PHP CSS and SQL</b>
-            <p>(08/2022 - 11/2022)</p>
-            <p>● A user-friendly library management system has been developed, incorporating a special feature of a ChatBot to
-              enhance its functionality and usability.</p>
-            <p>● This project has been developed utilizing the programming languages of HTML, CSS, and JavaScript to create a
-              dynamic and interactive web-based solution. </p>
-          </div>
-          <div className="row mb-4" style={{ width: '1347px', height: '50px' }}>
-            <b>PickDrop service web application using HTML CSS PHP JS and SQL</b>
-            <p>(02/2024 - 05/2024)</p>
-            <p>● The idea of the project is about providing an picking and drooping services.</p>
-            <p>● It has user friendly Interface and provides a platform for riders and customers to collaborate.
-              Nov 2022</p>
-            <p>● Successfully utilized API, achieving a 30% reduction in data retrieval time and seamlessly integrating critical information into
-              the project, resulting in a 15% efficiency improvement. </p>
-          </div> */}
-        </div>
 
+          {/* Mapping through projects */}
+          {projects.map((project) => (
+            <div className="row mb-4 project-container" style={{ width: '100%', height: 'auto', display: 'flex', alignItems: 'center' }}>
+              {/* Left Side: Image */}
+              <div className="project-image">
+                <img src={project.image} alt={project.title} style={{ width: '150px', height: '150px', borderRadius: '10px', objectFit: 'cover' }} />
+              </div>
+
+              {/* Right Side: Title, Description */}
+              <div className="project-info">
+                <h3>{project.title}</h3>
+                <p>(08/2022 - 11/2022)</p>
+                <p>{project.description}</p>
+              </div>
+            </div>
+          ))}
+
+        </div>
       </div>
+
       <div className="divider"></div>
       <div className="row" style={{ width: '1347px' }}>
 
