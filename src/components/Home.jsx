@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Box from "./Box";
+import BASE_URL from '../config/constants';
 import DividerImage from '../assets/divider-7568849_1280.webp';
 
 function Home() {
